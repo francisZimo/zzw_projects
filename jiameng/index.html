@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script type="text/javascript" src="http://vuejs.org/js/vue.min.js"></script>
+    <link rel="stylesheet" href="element-ui/lib/theme-chalk/index.css">
+    <script type="text/javascript" src="element-ui/lib/index.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <header >
+        <div class="head-function ">
+            <img src="img/banner.jpg" alt="智招网招商加盟">
+            <!--<div class="head-funcBtn">-->
+                <!--<span class="head-cooperate">加入合作伙伴</span>-->
+                <!--<span class="head-policy">了解招商政策</span>-->
+            <!--</div>-->
+        </div>
+    </header>
+    <article>
+        <el-row >
+            <el-col :span="24" style="text-align:center;">
+                <h3 class="zzw-investTitle">立即申请加盟智招网</h3>
+                <img src="img/yindao.png" style="margin:0 auto; display: inline-block" alt="加盟引导">
+            </el-col>
+            <el-col :span="24 " class="input-wrap">
+                <h3 class="input-title">填写提交申请信息</h3>
+            </el-col>
+            <el-col :span="12" :offset="6">
+                <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="150px" class="demo-ruleForm">
+                    <el-form-item label="意向代理城市" prop="name">
+                        <!--<el-cascader-->
+                                <!--:options="options"-->
+                                <!--v-model="areaId"-->
+                                <!--@change="handleChange">-->
+                        <!--</el-cascader>-->
+                        <el-input v-model="ruleForm.areaId"></el-input>
+                    </el-form-item>
+                    <el-form-item label="意向加盟模式" prop="name">
+                        <!--<el-input v-model="ruleForm.leagueType"></el-input>-->
+                        <el-select v-model="value2" placeholder="请选择">
+                            <el-option
+                                    v-for="item in options2"
+                                    :key="item.value"
+                                    :label="item.label"
+                                    :value="item.value">
+                            </el-option>
+                        </el-select>
+                    </el-form-item>
+                    <el-form-item label="公司全称" prop="name">
+                        <el-input v-model="ruleForm.companyName"></el-input>
+                    </el-form-item>
+                    <el-form-item label="公司联系人" prop="name">
+                        <el-input v-model="ruleForm.personName"></el-input>
+                    </el-form-item>
+                    <el-form-item label="公司联系电话" prop="name">
+                        <el-input v-model="ruleForm.phone"></el-input>
+                    </el-form-item>
+                    <el-form-item label="公司联系人邮件" prop="name">
+                        <el-input v-model="ruleForm.email"></el-input>
+                    </el-form-item>
+                    <el-form-item label="公司详细地址" prop="name">
+                        <el-input v-model="ruleForm.address"></el-input>
+                    </el-form-item>
+                    <el-form-item label="欲投入资金" prop="name">
+                        <el-input v-model="ruleForm.investmentMone"></el-input>
+                    </el-form-item>
+                    <el-form-item label="是否加盟过其他品牌" >
+                        <!--<el-input v-model="ruleForm.isBrand"></el-input>-->
+                        <el-select v-model="value3" placeholder="请选择">
+                            <el-option
+                                    v-for="item in options3"
+                                    :key="item.value"
+                                    :label="item.label"
+                                    :value="item.value">
+                            </el-option>
+                        </el-select>
+                    </el-form-item>
+                    <el-form-item label="公司主营业务" >
+                        <el-input v-model="ruleForm.companyOperation"></el-input>
+                    </el-form-item>
+                    <el-form-item label="公司主要优势" >
+                        <el-input v-model="ruleForm.companyAdvantage"></el-input>
+                    </el-form-item>
+                    <el-form-item label="验证码" prop="name" class="form-operation" >
+                        <el-input v-model.trim="ruleForm.name"  style="width:140px;"  placeholder="验证码"></el-input>
+                        <el-button class="" style="height:40px; width:112px; line-height: 40px; padding:0 20px;" type="danger" @click="getCode(formData)" :disabled="!show">
+                            <span v-show="show" style="width:100%; display: inline-block">获取验证码</span>
+                            <span v-show="!show" style="width:100%; display: inline-block" class="count">{{count}} </span>
+                        </el-button>
+                        <el-button class="submit" >
+                            立即提交
+                        </el-button>
+                    </el-form-item>
+                </el-form>
+            </el-col>
+        </el-row>
+    </article>
+    <footer>
+
+    </footer>
+</div>
+
+
+<script>
+let dev_prefix= "http://test.zhizhaowang.cn:8882";
+let test='http://test.zhizhaowang.cn:8882/'
+const TIME_COUNT=60;
+new Vue({
+     el:'#app',
+     data(){
+         return {
+             formData:{
+               phone:'',
+               code:''
+             },
+             show:true,
+             count:'',
+             timer:null,
+             value2:'',
+             options2: [{
+                 value: 1,
+                 label: '加盟省级运营中心'
+             }, {
+                 value: 2,
+                 label: '加盟工作站'
+             }],
+             value3:'',
+             options3: [{
+                 value: 1,
+                 label: '是'
+             }, {
+                 value: 0,
+                 label: '否'
+             }],
+             options:[],
+             cityList:[],
+             ruleForm: {
+                 areaId:'',
+                 address:'',
+                 companyName:'', //公司全称
+                 companyOperation:'',
+                 companyAdvantage:'',
+                 code:'',
+                 email:'',
+                 investmentMone:null,
+                 isBrand:0,
+                 personName:'', //公司联系人
+                 phone:'',
+                 leagueType:0 //加盟模式
+             },
+             rules: {
+                 areaId: [
+                     {required: true, message: '请选择意向代理城市', trigger: 'blur'},
+                 ],
+                 leagueType: [
+                     {required: true, message: '请选择加盟模式', trigger: 'change'}
+                 ],
+                 date1: [
+                     {type: 'date', required: true, message: '请选择日期', trigger: 'change'}
+                 ],
+                 date2: [
+                     {type: 'date', required: true, message: '请选择时间', trigger: 'change'}
+                 ],
+                 type: [
+                     {type: 'array', required: true, message: '请至少选择一个活动性质', trigger: 'change'}
+                 ],
+                 resource: [
+                     {required: true, message: '请选择活动资源', trigger: 'change'}
+                 ],
+                 desc: [
+                     {required: true, message: '请填写活动形式', trigger: 'blur'}
+                 ]
+             }
+         }
+     },
+    created(){
+        this.getCityList()
+    },
+     methods: {
+         getCode(formData){
+             this.sendCode();
+             if (!this.timer) {
+                 this.count = TIME_COUNT;
+                 this.show = false;
+                 this.timer = setInterval(() => {
+                     if (this.count > 0 && this.count <= TIME_COUNT) {
+                     this.count--;
+                 } else {
+                     this.show = true;
+                     clearInterval(this.timer);
+                     this.timer = null;
+                 }
+                }, 1000)
+             }
+         },
+         handleChange(value) {
+             console.log(value);
+         },
+         sendCode(){
+             axios.get(dev_prefix+'/front/league/sms',{
+                 params:{
+                     phone:'18513814001'
+                 }
+             }).then(function(_data){
+                 console.log(_data);
+             })
+         },
+         getCityList(){
+             axios.get(dev_prefix+'/front/areaList',{
+                 params:{
+                     phone:'18513814001'
+                 }
+             }).then(function(_data){
+                 console.log(_data.data.result);
+                 let cities=_data.data.result;
+                 let city_options=[];
+                 for(let i=0;i<cities.length;i++){
+                     let level1={};
+                     level1.value=cities[i].id;
+                     level1.label=cities[i].areaName;
+                     city_options[i]=level1;
+                 }
+                 console.log(city_options)
+             })
+         }
+     }
+ })
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+header{
+    width:100%;
+}
+.head-function{
+    position:relative;
+    width:100%;
+    /*height:500px;*/
+    /*background-image: url('../img/banner.jpg') ;*/
+    /*background-repeat:no-repeat ;*/
+    /*background-size: cover;*/
+}
+.head-function img{
+    width:100%;
+    height:auto;
+}
+.head-funcBtn{
+    width:100%;
+    position:absolute;
+    bottom:10%;
+    text-align: center;
+}
+.head-cooperate,.head-policy{
+    width:300px;
+    height:68px;
+    font-size:26px;
+    line-height: 68px;
+    display: inline-block;
+    text-align:center;
+    color:#fff;
+}
+.head-cooperate{
+    background-color: rgba(220,64,56,0.83);
+    border:1px solid  rgba(220,64,56,0.83);
+}
+.head-policy{
+    margin-left:70px;
+    border:1px solid  #fff;
+}
+article{
+    background-color: #fff;
+}
+.zzw-investTitle{
+    font-size:36px;
+    height:40px;
+    line-height: 40px;
+    text-align: center;
+    font-family: "Adobe 黑体 Std R";
+    margin-top:100px;
+    margin-bottom:20px;
+    letter-spacing:3px;
+}
+.input-title{
+    display: inline;
+    width:400px;
+    height: 40px;
+    line-height: 40px;
+    padding-left:50px;
+    padding-right:50px;
+    font-size:28px;
+    text-align: center;
+    letter-spacing: 3px;
+    background: url('../img/inputIcon.png') 0 center no-repeat;
+}
+.input-wrap{
+    width:100%;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom:58px;
+}
+body .form-operation .submit{
+    background-color:#dc4048;
+    color:#fff;
+    width: 100%;
+    margin-top:20px;
+    margin-left:0px;
+    margin-bottom:50px;
+}
