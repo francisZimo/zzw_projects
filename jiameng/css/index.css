@@ -39,6 +39,10 @@ header{
 article{
     background-color: #fff;
 }
+.mainContent{
+    width:1200px;
+    margin:0 auto;
+}
 .zzw-investTitle{
     font-size:36px;
     height:40px;
@@ -46,8 +50,13 @@ article{
     text-align: center;
     font-family: "Adobe 黑体 Std R";
     margin-top:100px;
-    margin-bottom:20px;
-    letter-spacing:3px;
+    margin-bottom:30px;
+
+}
+.zzw-join{
+    font-size:16px;
+    text-align: center;
+    letter-spacing:5px;
 }
 .input-title{
     display: inline;
@@ -71,7 +80,72 @@ body .form-operation .submit{
     background-color:#dc4048;
     color:#fff;
     width: 100%;
-    margin-top:20px;
     margin-left:0px;
     margin-bottom:50px;
+}
+.content-list{
+    padding-top:80px;
+}
+.content-list p{
+    font-size: 16px;
+    text-indent:2em;
+    letter-spacing: 2px;
+}
+.conList-title{
+    text-align:center;
+    font-size:36px;
+    margin-bottom: 55px;
+}
+.basic-conditions{
+    color:#dc4038;
+    font-size: 28px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.conditionList{
+    overflow: hidden;
+    width:100%;
+}
+.conditionList li{
+    width:100%;
+    float:left;
+    text-align: left;
+    font-size: 16px;
+    line-height: 34px;
+}
+.conditionListWrap{
+    margin-top:40px;
+}
+.investFee{
+    padding:60px 0;
+    text-align:center;
+    font-size: 16px;
+    background-color:#f8f8f8 ;
+}
+.investDetail{
+    text-align:left;
+    line-height: 34px;
+}
+.mainContent .investDetail p{
+    text-indent: 0;
+}
+.joinIn-area{
+    font-size:22px;
+    padding-left:30px;
+    background:url(../img/joinIcon.png) 0 center no-repeat;
+}
+.joinInItem{
+    margin-bottom: 20px;
+}
+.joinIn-type{
+    overflow: hidden;
+    margin-left: 35px;
+    width:100%;
+}
+.joinIn-type li{
+    font-size: 14px;
+    width:100%;
+    float: left;
+    line-height: 34px;
 }

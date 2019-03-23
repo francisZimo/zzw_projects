@@ -22,27 +22,126 @@
         </div>
     </header>
     <article>
-        <el-row >
+        <el-row class="mainContent" >
+            <el-col :span="24" class="content-list">
+                <h3 class="conList-title">前言</h3>
+                <p>新零售时代，为什么互联网企业能够异常突起，欣欣向荣而横行市场多年的传统企业却是哀鸿遍野，溃不成军？时代变了，传统思维方式已经与这个时代格格不入，供给侧改革，经济全面数据化。要想活下去，就必须积极运用颠覆传统时代的新技术，新模式和新思维。唯有如此，才能绝处逢生，重新焕发生机</p>
+            </el-col>
+            <el-col :span="24" class="content-list">
+                <h3 class="conList-title">公司简介</h3>
+                <el-row>
+                    <el-col :span="16">
+                        <p>智招网是国内首家为地方政府、企业、人才提供优化对接服务的大平台。</p>
+                        <p>本平台运用自主研发的前沿技术、海量的专业数据和线下的业务团队，实现“政府·企业·人才 ” 信息互链互通、资源智慧匹配、供需高效对接，是政府招商引资的新引擎、企业发展经营的新动能、人才创业就业的新助手。  </p>
+                        <p>智招网是招商引资领域惟一一家连续承办国家“商务部投资促进事务局重点项目推介会”活动的机构，也是商务部投促局重点推介项目。</p>
+                    </el-col>
+                    <el-col :span="6" :offset="2">
+                        <img src="img/zzw3.png" alt="">
+                    </el-col>
+                </el-row>
+            </el-col>
+            <el-col :span="24" class="content-list">
+                <h3 class="conList-title">项目优势</h3>
+                <img src="img/projectAdvantage.png" style="max-width: 100%;" alt="智招网项目优势">
+            </el-col>
+            <el-col :span="24" class="content-list">
+                <h3 class="conList-title">招商政策</h3>
+                <h4 class="basic-conditions">事业合伙人基本条件</h4>
+                <el-row class="conditionListWrap">
+                    <el-col :span="12">
+                        <ul class="conditionList">
+                            <li>一、格局大，境界高，愿意将本合伙事业作为自身发展的主要事业。</li>
+                            <li>二、年满18周岁，专科以上学历，具备完全民事责任能力。</li>
+                            <li>三、社会关系、人品及个人信用良好，无违法违纪等不良记录。</li>
+                            <li>四、认同智招网的价值观和企业愿景，接受其运营模式。</li>
+                            <li>五、具有契约精神，遵守总部规章制度，保守合作双方的商业机密。</li>
+                            <li>六、具备较强的社交能力、领导能力、学习力和一定的经济实力。</li>
+                            <li>七、能够组建品德高尚、业务高效、执行力强的工作团队。</li>
+                            <li>八、熟悉使用电脑、手机等电子产品，了解互联网行业。</li>
+                        </ul>
+                    </el-col>
+                    <el-col :span="12">
+                        <ul class="conditionList">
+                            <li>具有如下条件者优先：</li>
+                            <li>1.拥有政府、企业、高端人才资源者优先。</li>
+                            <li>2.对互联网、移动互联网有深入了解，具备一定运营能力者优先。</li>
+                            <li>3.曾经加盟或代理过网媒的合作经验，熟悉广告推广业务者优先。</li>
+                            <li>4.拥有当地传统媒体资源或从事过传媒、广告、网购行业者优先。</li>
+                            <li>5.熟悉招商引资行业或与政府部门合作过业务者优先。</li>
+                        </ul>
+
+                    </el-col>
+                </el-row>
+            </el-col>
+        </el-row>
+        <el-row>
+            <el-col :span="24" class="content-list">
+                <h3 class="conList-title">加盟费用</h3>
+                <div class="investFee">
+                    <el-row class="mainContent">
+                        <el-col :span="18" :offset="3" class="investDetail">
+                            <p>1.费用构成：年度合作加盟费和合同履约保证金。</p>
+                            <p>2.省级运营中心核算方法是整个省区内工作站个数乘以2万，合同履约保证金是省内工作站个数乘以0.5万。</p>
+                            <p>3.工作站加盟费20万至50万，再加一万元履约保证金</p>
+                        </el-col>
+                    </el-row>
+                </div>
+            </el-col>
+        </el-row>
+        <el-row class="mainContent">
+            <el-col :span="18" :offset="3" class="content-list">
+                <h3 class="conList-title">加盟模式</h3>
+                <div class="joinInItem">
+                    <h4 class="joinIn-area">一.省运营中心</h4>
+                    <ul class="joinIn-type">
+                        <li>1、制定省营运中心工作方案 </li>
+                        <li>2、招募县级合伙人，组建城市工作站 </li>
+                        <li>3、组织培训工作站人员  </li>
+                        <li>4、指导工作站开展业务 </li>
+                        <li>5、开展直营业务 </li>
+                    </ul>
+                </div>
+                <div class="joinInItem">
+                    <h4 class="joinIn-area">二.城市工作站</h4>
+                    <ul class="joinIn-type">
+                        <li>(一) 线下工作 </li>
+                        <li>1、宣传网站：全面宣传智招网/中国国际招商引智网，提升网站的知名度、美誉度。 </li>
+                        <li>2、营销网站：主动联系和营销当地招商局、园区、乡镇、景区、企业、人才，邀请其建设《VR智慧招商局 》、  《     《VR智慧开发区》、《VR企业 》、《VR人才工作室》、《VR乡镇 》、《VR景区 》、《VR城市 》等。    </li>
+                        <li>3、联办活动：帮助签约合作的城市、园区、企业、人才策划并联合举办相关活动。 </li>
+                        <li>4、承接课题：战略发展规划、产业发展规划、空间发展规划、生态发展规划等。 </li>
+                        <li>5、招商策划：为招商局和开发区策划招商引资方案。</li>
+                        <li>6、品牌宣传：承接城市/园区/企业品牌设计及广告宣传，包括VR、C I、V I 等。</li>
+                        <li>7、培训招生：政府招商引资培训、企业管理知识及技术技能培训招生。</li>
+                        <li>8、金融服务：城市、园区的融资咨询，企业投融资服务。</li>
+                        <li>9、项目推广：推广总部事业群相关产业项目在当地落地。</li>
+                        <li>10、产品营销：筛选本地优质产品/服务进入总部渠道，面向全球推广和销售；在本地推介销售本平台优选产品。</li>
+                        <li>11、中介咨询：提供战略研究、业务指导、技术支持、管理咨询、公共关系、市场调研、政策扶持等。</li>
+                        <li>12、收集需求：地方政府、企业、人才的有关需求，并及时反馈给总部。</li>
+                        <li>13、总部相关业务在当地的开展及交办的其他任务等。</li>
+                    </ul>
+                </div>
+            </el-col>
             <el-col :span="24" style="text-align:center;">
-                <h3 class="zzw-investTitle">立即申请加盟智招网</h3>
-                <img src="img/yindao.png" style="margin:0 auto; display: inline-block" alt="加盟引导">
+                <h3 class="zzw-investTitle">加盟流程</h3>
+                <h5 class="zzw-join">立即申请加入智招网</h5>
+                <img src="img/yindao.png" style="margin:0 auto; display: inline-block; max-width: 100%;" alt="加盟引导">
             </el-col>
             <el-col :span="24 " class="input-wrap">
                 <h3 class="input-title">填写提交申请信息</h3>
             </el-col>
-            <el-col :span="12" :offset="6">
+            <el-col :span="14" :offset="5">
                 <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="150px" class="demo-ruleForm">
-                    <el-form-item label="意向代理城市" prop="name">
+                    <el-form-item label="意向代理城市" prop="areaId">
                         <!--<el-cascader-->
-                                <!--:options="options"-->
-                                <!--v-model="areaId"-->
-                                <!--@change="handleChange">-->
+                        <!--:options="options"-->
+                        <!--v-model="areaId"-->
+                        <!--@change="handleChange">-->
                         <!--</el-cascader>-->
                         <el-input v-model="ruleForm.areaId"></el-input>
                     </el-form-item>
-                    <el-form-item label="意向加盟模式" prop="name">
+                    <el-form-item label="意向加盟模式" prop="leagueType">
                         <!--<el-input v-model="ruleForm.leagueType"></el-input>-->
-                        <el-select v-model="value2" placeholder="请选择">
+                        <el-select v-model="ruleForm.leagueType" placeholder="请选择">
                             <el-option
                                     v-for="item in options2"
                                     :key="item.value"
@@ -51,27 +150,27 @@
                             </el-option>
                         </el-select>
                     </el-form-item>
-                    <el-form-item label="公司全称" prop="name">
+                    <el-form-item label="公司全称" prop="companyName">
                         <el-input v-model="ruleForm.companyName"></el-input>
                     </el-form-item>
-                    <el-form-item label="公司联系人" prop="name">
+                    <el-form-item label="公司联系人" prop="personName">
                         <el-input v-model="ruleForm.personName"></el-input>
                     </el-form-item>
-                    <el-form-item label="公司联系电话" prop="name">
+                    <el-form-item label="联系人手机号" prop="phone">
                         <el-input v-model="ruleForm.phone"></el-input>
                     </el-form-item>
-                    <el-form-item label="公司联系人邮件" prop="name">
+                    <el-form-item label="公司联系人邮件" prop="email">
                         <el-input v-model="ruleForm.email"></el-input>
                     </el-form-item>
-                    <el-form-item label="公司详细地址" prop="name">
+                    <el-form-item label="公司详细地址" prop="address">
                         <el-input v-model="ruleForm.address"></el-input>
                     </el-form-item>
-                    <el-form-item label="欲投入资金" prop="name">
-                        <el-input v-model="ruleForm.investmentMone"></el-input>
+                    <el-form-item label="欲投入资金" prop="investmentMone" >
+                        <el-input v-model.number="ruleForm.investmentMone" placeholder="万元"></el-input>
                     </el-form-item>
                     <el-form-item label="是否加盟过其他品牌" >
                         <!--<el-input v-model="ruleForm.isBrand"></el-input>-->
-                        <el-select v-model="value3" placeholder="请选择">
+                        <el-select v-model="ruleForm.isBrand" placeholder="请选择">
                             <el-option
                                     v-for="item in options3"
                                     :key="item.value"
@@ -81,18 +180,30 @@
                         </el-select>
                     </el-form-item>
                     <el-form-item label="公司主营业务" >
-                        <el-input v-model="ruleForm.companyOperation"></el-input>
+                        <el-input
+                                type="textarea"
+                                :rows="2"
+                                placeholder="请输入公司主营业务"
+                                v-model="ruleForm.companyOperation">
+                        </el-input>
                     </el-form-item>
                     <el-form-item label="公司主要优势" >
-                        <el-input v-model="ruleForm.companyAdvantage"></el-input>
+                        <el-input
+                                type="textarea"
+                                :rows="2"
+                                placeholder="请输入公司主要优势"
+                                v-model="ruleForm.companyAdvantage">
+                        </el-input>
                     </el-form-item>
-                    <el-form-item label="验证码" prop="name" class="form-operation" >
-                        <el-input v-model.trim="ruleForm.name"  style="width:140px;"  placeholder="验证码"></el-input>
-                        <el-button class="" style="height:40px; width:112px; line-height: 40px; padding:0 20px;" type="danger" @click="getCode(formData)" :disabled="!show">
+                    <el-form-item label="验证码" prop="code"  >
+                        <el-input v-model.trim="ruleForm.code"  style="width:140px;"  placeholder="验证码"></el-input>
+                        <el-button  style="height:40px; width:112px; line-height: 40px; padding:0 20px;" type="danger" @click="getCode(formData)" :disabled="!show">
                             <span v-show="show" style="width:100%; display: inline-block">获取验证码</span>
                             <span v-show="!show" style="width:100%; display: inline-block" class="count">{{count}} </span>
                         </el-button>
-                        <el-button class="submit" >
+                    </el-form-item>
+                    <el-form-item label="" class="form-operation">
+                        <el-button class="submit"  @click="submitForm">
                             立即提交
                         </el-button>
                     </el-form-item>
@@ -110,6 +221,20 @@
 let dev_prefix= "http://test.zhizhaowang.cn:8882";
 let test='http://test.zhizhaowang.cn:8882/'
 const TIME_COUNT=60;
+function isValidPhone(str){
+    var _str=parseInt(str)
+    const reg=/^1[3|4|5|7|8][0-9]\d{8}$/
+    return reg.test(_str)
+}
+let validPhone=(rule,value,callback)=>{
+    if(!value){
+        callback(new Error('请输入手机号码'))
+    }else if(!isValidPhone(value)){
+        callback(new Error('请输入正确的11位手机号码'))
+    }else{
+        callback()
+    }
+}
 new Vue({
      el:'#app',
      data(){
@@ -121,7 +246,6 @@ new Vue({
              show:true,
              count:'',
              timer:null,
-             value2:'',
              options2: [{
                  value: 1,
                  label: '加盟省级运营中心'
@@ -148,10 +272,10 @@ new Vue({
                  code:'',
                  email:'',
                  investmentMone:null,
-                 isBrand:0,
+                 isBrand:null,
                  personName:'', //公司联系人
                  phone:'',
-                 leagueType:0 //加盟模式
+                 leagueType:null //加盟模式
              },
              rules: {
                  areaId: [
@@ -160,20 +284,30 @@ new Vue({
                  leagueType: [
                      {required: true, message: '请选择加盟模式', trigger: 'change'}
                  ],
-                 date1: [
-                     {type: 'date', required: true, message: '请选择日期', trigger: 'change'}
+                 companyName: [
+                     {required: true, message: '请填写公司全称', trigger: 'blur'},
+                     { min: 2, max: 50, message: '长度在 2 到 50 个字符', trigger: 'blur' }
                  ],
-                 date2: [
-                     {type: 'date', required: true, message: '请选择时间', trigger: 'change'}
+                 personName: [
+                     {required: true, message: '请填写公司联系人姓名', trigger: 'blur'},
+                     { min: 2, max: 25, message: '长度在 2 到 25 个字符', trigger: 'blur' }
                  ],
-                 type: [
-                     {type: 'array', required: true, message: '请至少选择一个活动性质', trigger: 'change'}
+                 phone: [
+                     { required: true, validator: validPhone,  trigger:  ['blur', 'change']},
                  ],
-                 resource: [
-                     {required: true, message: '请选择活动资源', trigger: 'change'}
+                 email: [
+                     { required: true, message: '请输入邮箱地址', trigger: 'blur' },
+                     { type: 'email', message: '请输入正确的邮箱地址', trigger: ['blur', 'change'] }
                  ],
-                 desc: [
-                     {required: true, message: '请填写活动形式', trigger: 'blur'}
+                 address: [
+                     {required: true, message: '请填写公司详细地址', trigger: 'blur'},
+                     { min: 5, max: 100, message: '长度在 5 到 100 个字符', trigger: 'blur' }
+                 ],
+                 investmentMone: [
+                     {type:'number', required: true, message: '请填写正确的欲投入金额', trigger: 'blur'}
+                 ],
+                 code: [
+                     { required: true, message: '请输入手机验证码', trigger: 'blur' },
                  ]
              }
          }
@@ -182,50 +316,88 @@ new Vue({
         this.getCityList()
     },
      methods: {
-         getCode(formData){
-             this.sendCode();
-             if (!this.timer) {
-                 this.count = TIME_COUNT;
-                 this.show = false;
-                 this.timer = setInterval(() => {
-                     if (this.count > 0 && this.count <= TIME_COUNT) {
-                     this.count--;
-                 } else {
-                     this.show = true;
-                     clearInterval(this.timer);
-                     this.timer = null;
+         submitForm(){ //提交信息
+             this.$refs['ruleForm'].validate((valid)=>{
+                 if(valid){
+                     axios.post(dev_prefix+'/front/league/info',this.ruleForm).then(()=>{
+                         this.$message({
+                             message:'您的信息已成功提交，稍后我们的工作人员会与您取得联系。',
+                             type:'success'
+                         })
+                        this.resetForm('ruleForm')
+                     })
+                 }else{
+                     this.$message({
+                         message:'请保证表格中必要信息填写正确！',
+                         type:'error'
+                     })
                  }
-                }, 1000)
+             })
+
+         },
+         resetForm(formName){
+             this.show=true;
+             this.count='',
+             this.timer=null,
+             this.ruleForm.companyOperation='';
+             this.ruleForm.isBrand=null;
+             this.ruleForm.companyAdvantage='';
+             this.$refs[formName].resetFields();
+         },
+         getCode(formData){
+             let flag=isValidPhone(this.ruleForm.phone);
+             if(flag){
+                 this.sendCode().then(()=>{
+                     if (!this.timer) {
+                     this.count = TIME_COUNT;
+                     this.show = false;
+                     this.timer = setInterval(() => {
+                             if (this.count > 0 && this.count <= TIME_COUNT) {
+                             this.count--;
+                         } else {
+                             this.show = true;
+                             clearInterval(this.timer);
+                             this.timer = null;
+                         }
+                    }, 1000)
+                    }
+                 }).catch(err=>{
+                     this.$message({
+                     message:'错误提示'+err,
+                     type:'error'
+                 })
+                 });
+             }else{
+                 this.$message({
+                     message:'清先填写正确的手机号码',
+                     type:'error'
+                 })
              }
          },
          handleChange(value) {
              console.log(value);
          },
          sendCode(){
-             axios.get(dev_prefix+'/front/league/sms',{
+             return axios.get(dev_prefix+'/front/league/sms',{
                  params:{
-                     phone:'18513814001'
+                     phone:this.ruleForm.phone
                  }
-             }).then(function(_data){
-                 console.log(_data);
              })
          },
          getCityList(){
              axios.get(dev_prefix+'/front/areaList',{
-                 params:{
-                     phone:'18513814001'
-                 }
+
              }).then(function(_data){
-                 console.log(_data.data.result);
-                 let cities=_data.data.result;
-                 let city_options=[];
-                 for(let i=0;i<cities.length;i++){
-                     let level1={};
-                     level1.value=cities[i].id;
-                     level1.label=cities[i].areaName;
-                     city_options[i]=level1;
-                 }
-                 console.log(city_options)
+////                 console.log(_data.data.result);
+//                 let cities=_data.data.result;
+//                 let city_options=[];
+//                 for(let i=0;i<cities.length;i++){
+//                     let level1={};
+//                     level1.value=cities[i].id;
+//                     level1.label=cities[i].areaName;
+//                     city_options[i]=level1;
+//                 }
+//                 console.log(city_options)
              })
          }
      }
