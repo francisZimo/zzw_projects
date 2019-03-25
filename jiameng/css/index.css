@@ -64,7 +64,6 @@ article{
     height: 40px;
     line-height: 40px;
     padding-left:50px;
-    padding-right:50px;
     font-size:28px;
     text-align: center;
     letter-spacing: 3px;
@@ -88,7 +87,7 @@ body .form-operation .submit{
 }
 .content-list p{
     font-size: 16px;
-    text-indent:2em;
+    text-indent:36px;
     letter-spacing: 2px;
 }
 .conList-title{
@@ -140,8 +139,7 @@ body .form-operation .submit{
 }
 .joinIn-type{
     overflow: hidden;
-    margin-left: 35px;
-    width:100%;
+    padding-left: 35px;
 }
 .joinIn-type li{
     font-size: 14px;
@@ -149,3 +147,4 @@ body .form-operation .submit{
     float: left;
     line-height: 34px;
 }
+

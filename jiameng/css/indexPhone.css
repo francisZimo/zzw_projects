@@ -1,0 +1,70 @@
+@media (max-width: 768px) {
+    html,body{
+        width:100%;
+    }
+    .mainContent{
+        width:100%;
+        padding-left:10px;
+        padding-right:10px;
+    }
+    .mainContent .content-list {
+        padding-top:20px;
+    }
+    .mainContent .conList-title{
+        font-size:24px;
+        margin-bottom:20px;
+    }
+    .zzw_describe{
+        text-align: center;
+        margin-top:10px;
+        margin-bottom:10px;
+    }
+    .content-list p{
+        font-size:14px;
+        letter-spacing: 1px;
+        text-indent: 30px;
+    }
+    .basic-conditions{
+        font-size:16px;
+    }
+    .conditionListWrap{
+        margin-top:20px;
+    }
+    .conditionList li{
+        font-size:14px;
+    }
+    .conditionList2{
+        margin-top:20px;
+    }
+    .conditionList2 li:first-child{
+        font-size:16px;
+        font-weight: 700;
+    }
+    .content-listSpecial{
+        padding-top:20px;
+    }
+    .content-listSpecial .conList-title{
+        font-size:24px;
+        margin-bottom:20px;
+    }
+    .investFee{
+        padding:30px 0;
+    }
+    .joinIn-area{
+        font-size:18px;
+    }
+    .joinIn-area:first-child{
+        margin-top:20px;
+    }
+    .zzw-investTitle{
+        margin-top:20px;
+    }
+    .input-wrap{
+        margin-top:20px;
+        margin-bottom:20px;
+    }
+    .input-title{
+        font-size:18px;
+    }
+
+}

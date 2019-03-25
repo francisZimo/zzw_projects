@@ -2,19 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>智招网事业合伙人-全国渠道加盟火热进行中</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/indexPhone.css">
+    <link rel="stylesheet" href="css/display.css">
     <script type="text/javascript" src="http://vuejs.org/js/vue.min.js"></script>
-    <link rel="stylesheet" href="element-ui/lib/theme-chalk/index.css">
-    <script type="text/javascript" src="element-ui/lib/index.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
 </head>
 <body>
 <div id="app">
     <header >
         <div class="head-function ">
-            <img src="img/banner.jpg" alt="智招网招商加盟">
+            <img src="img/banner.jpg" class="hidden-xs-only" alt="智招网招商加盟" >
+            <img src="img/bannerPhone.jpg" class="hidden-sm-and-up" alt="智招网招商加盟" >
             <!--<div class="head-funcBtn">-->
                 <!--<span class="head-cooperate">加入合作伙伴</span>-->
                 <!--<span class="head-policy">了解招商政策</span>-->
@@ -23,32 +29,33 @@
     </header>
     <article>
         <el-row class="mainContent" >
-            <el-col :span="24" class="content-list">
+            <el-col :md="24" class="content-list">
                 <h3 class="conList-title">前言</h3>
                 <p>新零售时代，为什么互联网企业能够异常突起，欣欣向荣而横行市场多年的传统企业却是哀鸿遍野，溃不成军？时代变了，传统思维方式已经与这个时代格格不入，供给侧改革，经济全面数据化。要想活下去，就必须积极运用颠覆传统时代的新技术，新模式和新思维。唯有如此，才能绝处逢生，重新焕发生机</p>
             </el-col>
-            <el-col :span="24" class="content-list">
+            <el-col :md="24" class="content-list">
                 <h3 class="conList-title">公司简介</h3>
                 <el-row>
-                    <el-col :span="16">
+                    <el-col :md="{span:16}">
                         <p>智招网是国内首家为地方政府、企业、人才提供优化对接服务的大平台。</p>
                         <p>本平台运用自主研发的前沿技术、海量的专业数据和线下的业务团队，实现“政府·企业·人才 ” 信息互链互通、资源智慧匹配、供需高效对接，是政府招商引资的新引擎、企业发展经营的新动能、人才创业就业的新助手。  </p>
                         <p>智招网是招商引资领域惟一一家连续承办国家“商务部投资促进事务局重点项目推介会”活动的机构，也是商务部投促局重点推介项目。</p>
                     </el-col>
-                    <el-col :span="6" :offset="2">
-                        <img src="img/zzw3.png" alt="">
+                    <el-col :md="{span:6,offset:2}" :xs={span:24,offset:0} class="zzw_describe">
+                        <img src="img/zzw3.png" alt="智招网介绍">
                     </el-col>
                 </el-row>
             </el-col>
-            <el-col :span="24" class="content-list">
+            <el-col :md="24" class="content-list">
                 <h3 class="conList-title">项目优势</h3>
-                <img src="img/projectAdvantage.png" style="max-width: 100%;" alt="智招网项目优势">
+                <img src="img/projectAdvantage.png" style="max-width: 100%;"  class="hidden-xs-only" alt="智招网项目优势">
+                <img src="img/proAdPhone.jpg" style="max-width: 100%;" class="hidden-sm-and-up" alt="智招网项目优势">
             </el-col>
-            <el-col :span="24" class="content-list">
+            <el-col :md="24" class="content-list">
                 <h3 class="conList-title">招商政策</h3>
                 <h4 class="basic-conditions">事业合伙人基本条件</h4>
                 <el-row class="conditionListWrap">
-                    <el-col :span="12">
+                    <el-col :md="12">
                         <ul class="conditionList">
                             <li>一、格局大，境界高，愿意将本合伙事业作为自身发展的主要事业。</li>
                             <li>二、年满18周岁，专科以上学历，具备完全民事责任能力。</li>
@@ -60,8 +67,8 @@
                             <li>八、熟悉使用电脑、手机等电子产品，了解互联网行业。</li>
                         </ul>
                     </el-col>
-                    <el-col :span="12">
-                        <ul class="conditionList">
+                    <el-col :md="12">
+                        <ul class="conditionList conditionList2">
                             <li>具有如下条件者优先：</li>
                             <li>1.拥有政府、企业、高端人才资源者优先。</li>
                             <li>2.对互联网、移动互联网有深入了解，具备一定运营能力者优先。</li>
@@ -75,11 +82,11 @@
             </el-col>
         </el-row>
         <el-row>
-            <el-col :span="24" class="content-list">
+            <el-col :md="24" class="content-list content-listSpecial">
                 <h3 class="conList-title">加盟费用</h3>
                 <div class="investFee">
                     <el-row class="mainContent">
-                        <el-col :span="18" :offset="3" class="investDetail">
+                        <el-col  :md="{span:18,offset:3}" :xs="{span:24}" class="investDetail">
                             <p>1.费用构成：年度合作加盟费和合同履约保证金。</p>
                             <p>2.省级运营中心核算方法是整个省区内工作站个数乘以2万，合同履约保证金是省内工作站个数乘以0.5万。</p>
                             <p>3.工作站加盟费20万至50万，再加一万元履约保证金</p>
@@ -89,7 +96,7 @@
             </el-col>
         </el-row>
         <el-row class="mainContent">
-            <el-col :span="18" :offset="3" class="content-list">
+            <el-col :md="{span:18,offset:3}" :xs="{span:24,offset:0}" class="content-list">
                 <h3 class="conList-title">加盟模式</h3>
                 <div class="joinInItem">
                     <h4 class="joinIn-area">一.省运营中心</h4>
@@ -121,23 +128,25 @@
                     </ul>
                 </div>
             </el-col>
-            <el-col :span="24" style="text-align:center;">
+            <el-col :md="24" style="text-align:center;">
                 <h3 class="zzw-investTitle">加盟流程</h3>
                 <h5 class="zzw-join">立即申请加入智招网</h5>
-                <img src="img/yindao.png" style="margin:0 auto; display: inline-block; max-width: 100%;" alt="加盟引导">
+                <img src="img/yindao.png" style=" margin:0 auto; max-width: 100%;" class="hidden-xs-only" alt="加盟引导">
+                <img src="img/yindaoPhone.jpg" style="  margin:0 auto; max-width: 100%;" class="hidden-sm-and-up" alt="加盟引导">
             </el-col>
-            <el-col :span="24 " class="input-wrap">
+            <el-col :md="24 " class="input-wrap">
                 <h3 class="input-title">填写提交申请信息</h3>
             </el-col>
-            <el-col :span="14" :offset="5">
-                <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="150px" class="demo-ruleForm">
+            <el-col :md="{span:14,offset:5}" :xs="{span:24,offset:0}">
+                <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="140px" class="demo-ruleForm">
                     <el-form-item label="意向代理城市" prop="areaId">
-                        <!--<el-cascader-->
-                        <!--:options="options"-->
-                        <!--v-model="areaId"-->
-                        <!--@change="handleChange">-->
-                        <!--</el-cascader>-->
-                        <el-input v-model="ruleForm.areaId"></el-input>
+                        <el-cascader
+                            :options="options_city"
+                            v-model="confirmCity"
+                            @change="handleChange"
+                           >
+                        </el-cascader>
+                        <!--<el-input v-model="ruleForm.areaId"></el-input>-->
                     </el-form-item>
                     <el-form-item label="意向加盟模式" prop="leagueType">
                         <!--<el-input v-model="ruleForm.leagueType"></el-input>-->
@@ -158,6 +167,13 @@
                     </el-form-item>
                     <el-form-item label="联系人手机号" prop="phone">
                         <el-input v-model="ruleForm.phone"></el-input>
+                    </el-form-item>
+                    <el-form-item label="验证码" prop="code"  >
+                        <el-input v-model.trim="ruleForm.code"  style="width:100px;"  placeholder="验证码"></el-input>
+                        <el-button  style="height:40px; width:100px; line-height: 40px; padding:0 20px;" type="danger" @click="getCode()" :disabled="!show">
+                            <span v-show="show" style="width:100%; display: inline-block">获取验证码</span>
+                            <span v-show="!show" style="width:100%; display: inline-block" class="count">{{count}} </span>
+                        </el-button>
                     </el-form-item>
                     <el-form-item label="公司联系人邮件" prop="email">
                         <el-input v-model="ruleForm.email"></el-input>
@@ -195,13 +211,7 @@
                                 v-model="ruleForm.companyAdvantage">
                         </el-input>
                     </el-form-item>
-                    <el-form-item label="验证码" prop="code"  >
-                        <el-input v-model.trim="ruleForm.code"  style="width:140px;"  placeholder="验证码"></el-input>
-                        <el-button  style="height:40px; width:112px; line-height: 40px; padding:0 20px;" type="danger" @click="getCode(formData)" :disabled="!show">
-                            <span v-show="show" style="width:100%; display: inline-block">获取验证码</span>
-                            <span v-show="!show" style="width:100%; display: inline-block" class="count">{{count}} </span>
-                        </el-button>
-                    </el-form-item>
+
                     <el-form-item label="" class="form-operation">
                         <el-button class="submit"  @click="submitForm">
                             立即提交
@@ -239,10 +249,8 @@ new Vue({
      el:'#app',
      data(){
          return {
-             formData:{
-               phone:'',
-               code:''
-             },
+             options_city:[],//省市列表
+             confirmCity:[], //确认选择的城市
              show:true,
              count:'',
              timer:null,
@@ -264,7 +272,7 @@ new Vue({
              options:[],
              cityList:[],
              ruleForm: {
-                 areaId:'',
+                 areaId:[],
                  address:'',
                  companyName:'', //公司全称
                  companyOperation:'',
@@ -312,10 +320,14 @@ new Vue({
              }
          }
      },
-    created(){
-        this.getCityList()
-    },
+     mounted(){
+        this.getCityList();
+     },
      methods: {
+         handleChange(value){
+             let areaId=value[value.length-1];
+             this.ruleForm.areaId =areaId;
+         },
          submitForm(){ //提交信息
              this.$refs['ruleForm'].validate((valid)=>{
                  if(valid){
@@ -336,6 +348,7 @@ new Vue({
 
          },
          resetForm(formName){
+             this.confirmCity=[];
              this.show=true;
              this.count='',
              this.timer=null,
@@ -344,7 +357,7 @@ new Vue({
              this.ruleForm.companyAdvantage='';
              this.$refs[formName].resetFields();
          },
-         getCode(formData){
+         getCode(){
              let flag=isValidPhone(this.ruleForm.phone);
              if(flag){
                  this.sendCode().then(()=>{
@@ -374,9 +387,6 @@ new Vue({
                  })
              }
          },
-         handleChange(value) {
-             console.log(value);
-         },
          sendCode(){
              return axios.get(dev_prefix+'/front/league/sms',{
                  params:{
@@ -385,23 +395,152 @@ new Vue({
              })
          },
          getCityList(){
+             let _this=this;
              axios.get(dev_prefix+'/front/areaList',{
 
              }).then(function(_data){
-////                 console.log(_data.data.result);
-//                 let cities=_data.data.result;
-//                 let city_options=[];
-//                 for(let i=0;i<cities.length;i++){
-//                     let level1={};
-//                     level1.value=cities[i].id;
-//                     level1.label=cities[i].areaName;
-//                     city_options[i]=level1;
-//                 }
-//                 console.log(city_options)
+                 let cities=_data.data.result;
+                 let city_options=[];
+                for(let i=0;i<cities.length;i++){
+                    let level1={};
+                    level1.value=cities[i].id;
+                    level1.label=cities[i].areaName;
+                    city_options[i]=level1;
+                    if(cities[i].cityAreas&&cities[i].cityAreas.length>0){
+                        city_options[i].children=[];
+                        for(let key=0;key<cities[i].cityAreas.length;key++){
+                            let level2={};
+                            level2.value=cities[i].cityAreas[key].id;
+                            level2.label=cities[i].cityAreas[key].areaName;
+                            city_options[i].children[key]=level2;
+
+                        }
+                    }
+                }
+                 _this.options_city=city_options;
+             }).catch(err=>{
+                 console.log(err)
              })
-         }
+         },
+         //微信分享
+
      }
  })
+</script>
+<script>
+    function fetchWXParams(url){
+        var xhr= new XMLHttpRequest();
+        xhr.open('GET','http://www.zhizhaowang.cn:8088/index/token?url='+url);
+        xhr.onreadystatechange=function(){
+            if(xhr.readyState==4&&xhr.status==200){
+                var _result=xhr.responseText;
+                var data=JSON.parse(_result).result
+                wxShare(data)
+            }
+        };
+        xhr.send(null)
+    }
+    var locationUrl=encodeURIComponent(location.href.split('#')[0]);
+    fetchWXParams(locationUrl);
+    function wxShare(res){
+        var desc = '智招网是国内首家为地方政府、企业、人才提供优化对接服务的大平台。';
+        if (res) {
+            wx.config({
+                debug: false,
+                appId: res.appid,
+                timestamp: res.timestamp,
+                nonceStr: res.nonceStr,
+                signature:res.signature,
+                jsApiList: [
+                    'onMenuShareTimeline',
+                    'onMenuShareAppMessage',
+                    'onMenuShareQQ',
+                    'onMenuShareWeibo',
+                    'onMenuShareQZone'
+                ]
+            });
+            wx.ready(function(){
+                let imgShare="http://cdn.zhizhaowang.cn/dWw72vBTwT4o3dY.jpg";
+                wx.checkJsApi({
+                    jsApiList: [
+                        'onMenuShareTimeline',
+                        'onMenuShareAppMessage',
+                        'onMenuShareQQ',
+                        'onMenuShareWeibo',
+                        'onMenuShareQZone'
+                    ]
+                });
+                /*分享到朋友圈*/
+                wx.onMenuShareTimeline({
+                    title: document.title,
+                    desc: desc,
+                    link: location.href,
+                    imgUrl: imgShare,
+                    success: function () {
+
+                    },
+                    cancel: function () {
+
+                    }
+                });
+
+                /*分享给朋友*/
+                wx.onMenuShareAppMessage({
+                    title: document.title,
+                    desc: desc,
+                    link: location.href,
+                    imgUrl: imgShare,
+                    type: 'link', // 分享类型,music、video或link，不填默认为link
+                    dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                    success: function () {
+
+                    },
+                    cancel: function () {
+
+                    }
+                });
+
+                wx.onMenuShareQQ({
+                    title:document.title,
+                    desc: desc,
+                    link: location.href,
+                    imgUrl: imgShare,
+                    success: function () {
+
+                    },
+                    cancel: function () {
+
+                    }
+                });
+
+                wx.onMenuShareWeibo({
+                    title: document.title,
+                    desc: desc,
+                    link: location.href,
+                    imgUrl: imgShare,
+                    success: function () {
+
+                    },
+                    cancel: function () {
+
+                    }
+                });
+
+                wx.onMenuShareQZone({
+                    title: document.title,
+                    desc: desc,
+                    link: location.href,
+                    imgUrl: imgShare,
+                    success: function () {
+
+                    },
+                    cancel: function () {
+
+                    }
+                });
+            });
+        }
+    }
 </script>
 </body>
 </html>
