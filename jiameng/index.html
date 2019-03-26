@@ -31,7 +31,7 @@
         <el-row class="mainContent" >
             <el-col :md="24" class="content-list">
                 <h3 class="conList-title">前言</h3>
-                <p>新零售时代，为什么互联网企业能够异常突起，欣欣向荣而横行市场多年的传统企业却是哀鸿遍野，溃不成军？时代变了，传统思维方式已经与这个时代格格不入，供给侧改革，经济全面数据化。要想活下去，就必须积极运用颠覆传统时代的新技术，新模式和新思维。唯有如此，才能绝处逢生，重新焕发生机</p>
+                <p>新零售时代，为什么互联网企业能够异常突起，欣欣向荣而横行市场多年的传统企业却是哀鸿遍野，溃不成军？时代变了，传统思维方式已经与这个时代格格不入，供给侧改革，经济全面数据化。要想活下去，就必须积极运用颠覆传统时代的新技术，新模式和新思维。唯有如此，才能绝处逢生，重新焕发生机。</p>
             </el-col>
             <el-col :md="24" class="content-list">
                 <h3 class="conList-title">公司简介</h3>
@@ -89,7 +89,7 @@
                         <el-col  :md="{span:18,offset:3}" :xs="{span:24}" class="investDetail">
                             <p>1.费用构成：年度合作加盟费和合同履约保证金。</p>
                             <p>2.省级运营中心核算方法是整个省区内工作站个数乘以2万，合同履约保证金是省内工作站个数乘以0.5万。</p>
-                            <p>3.工作站加盟费20万至50万，再加一万元履约保证金</p>
+                            <p>3.工作站加盟费20万至50万，再加一万元履约保证金。</p>
                         </el-col>
                     </el-row>
                 </div>
@@ -113,7 +113,7 @@
                     <ul class="joinIn-type">
                         <li>(一) 线下工作 </li>
                         <li>1、宣传网站：全面宣传智招网/中国国际招商引智网，提升网站的知名度、美誉度。 </li>
-                        <li>2、营销网站：主动联系和营销当地招商局、园区、乡镇、景区、企业、人才，邀请其建设《VR智慧招商局 》、  《     《VR智慧开发区》、《VR企业 》、《VR人才工作室》、《VR乡镇 》、《VR景区 》、《VR城市 》等。    </li>
+                        <li>2、营销网站：主动联系和营销当地招商局、园区、乡镇、景区、企业、人才，邀请其建设《VR智慧招商局 》、《VR智慧开发区》、《VR企业 》、《VR人才工作室》、《VR乡镇 》、《VR景区 》、《VR城市 》等。    </li>
                         <li>3、联办活动：帮助签约合作的城市、园区、企业、人才策划并联合举办相关活动。 </li>
                         <li>4、承接课题：战略发展规划、产业发展规划、空间发展规划、生态发展规划等。 </li>
                         <li>5、招商策划：为招商局和开发区策划招商引资方案。</li>
@@ -170,7 +170,7 @@
                     </el-form-item>
                     <el-form-item label="验证码" prop="code"  >
                         <el-input v-model.trim="ruleForm.code"  style="width:100px;"  placeholder="验证码"></el-input>
-                        <el-button  style="height:40px; width:100px; line-height: 40px; padding:0 20px;" type="danger" @click="getCode()" :disabled="!show">
+                        <el-button  style="height:40px; width:100px; line-height: 40px; padding:0 13px;" type="danger" @click="getCode()" :disabled="!show">
                             <span v-show="show" style="width:100%; display: inline-block">获取验证码</span>
                             <span v-show="!show" style="width:100%; display: inline-block" class="count">{{count}} </span>
                         </el-button>
@@ -213,7 +213,7 @@
                     </el-form-item>
 
                     <el-form-item label="" class="form-operation">
-                        <el-button class="submit"  @click="submitForm">
+                        <el-button class="submit"  @click="submitForm" >
                             立即提交
                         </el-button>
                     </el-form-item>
@@ -249,6 +249,7 @@ new Vue({
      el:'#app',
      data(){
          return {
+             fullscreenLoading: false,
              options_city:[],//省市列表
              confirmCity:[], //确认选择的城市
              show:true,
@@ -279,11 +280,11 @@ new Vue({
                  companyAdvantage:'',
                  code:'',
                  email:'',
-                 investmentMone:null,
-                 isBrand:null,
+                 investmentMone:'',
+                 isBrand:'',
                  personName:'', //公司联系人
                  phone:'',
-                 leagueType:null //加盟模式
+                 leagueType:'' //加盟模式
              },
              rules: {
                  areaId: [
@@ -331,12 +332,37 @@ new Vue({
          submitForm(){ //提交信息
              this.$refs['ruleForm'].validate((valid)=>{
                  if(valid){
-                     axios.post(dev_prefix+'/front/league/info',this.ruleForm).then(()=>{
+                     const loading = this.$loading({
+                         lock: true,
+                         text: '正在提交信息，请耐心等待',
+                         spinner: 'el-icon-loading',
+                         background: 'rgba(0, 0, 0, 0.7)'
+                     });
+                     axios.post(dev_prefix+'/front/league/info',this.ruleForm).then((_data)=>{
+                         console.log(_data)
+                         if(_data.data.code===200){
+                         loading.close();
                          this.$message({
                              message:'您的信息已成功提交，稍后我们的工作人员会与您取得联系。',
                              type:'success'
                          })
-                        this.resetForm('ruleForm')
+                         this.resetForm('ruleForm')
+                         }else{
+                            if(_data.data.msg){
+                                this.$message({
+                                    message:_data.data.msg,
+                                    type:'error'
+                                })
+                            }
+                            loading.close();
+
+                         }
+
+                     }).catch((err)=>{
+                         this.$message({
+                             message:err,
+                             type:'error'
+                         })
                      })
                  }else{
                      this.$message({
