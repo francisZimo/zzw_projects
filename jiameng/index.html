@@ -195,7 +195,7 @@
                             </el-option>
                         </el-select>
                     </el-form-item>
-                    <el-form-item label="公司主营业务" >
+                    <el-form-item label="公司主营业务" prop="companyOperation" >
                         <el-input
                                 type="textarea"
                                 :rows="2"
@@ -203,7 +203,7 @@
                                 v-model="ruleForm.companyOperation">
                         </el-input>
                     </el-form-item>
-                    <el-form-item label="公司主要优势" >
+                    <el-form-item label="公司主要优势" prop="companyAdvantage">
                         <el-input
                                 type="textarea"
                                 :rows="2"
@@ -317,7 +317,15 @@ new Vue({
                  ],
                  code: [
                      { required: true, message: '请输入手机验证码', trigger: 'blur' },
+                 ],
+                 companyOperation: [
+                     { min: 0, max: 500, message: '长度在 0 到 500 个字符', trigger: 'blur' }
+                 ],
+                 companyAdvantage:[
+                     { min: 0, max: 500, message: '长度在 0 到 500 个字符', trigger: 'blur' }
                  ]
+
+
              }
          }
      },
@@ -339,7 +347,6 @@ new Vue({
                          background: 'rgba(0, 0, 0, 0.7)'
                      });
                      axios.post(dev_prefix+'/front/league/info',this.ruleForm).then((_data)=>{
-                         console.log(_data)
                          if(_data.data.code===200){
                          loading.close();
                          this.$message({
@@ -386,20 +393,23 @@ new Vue({
          getCode(){
              let flag=isValidPhone(this.ruleForm.phone);
              if(flag){
-                 this.sendCode().then(()=>{
-                     if (!this.timer) {
-                     this.count = TIME_COUNT;
-                     this.show = false;
-                     this.timer = setInterval(() => {
-                             if (this.count > 0 && this.count <= TIME_COUNT) {
-                             this.count--;
-                         } else {
-                             this.show = true;
-                             clearInterval(this.timer);
-                             this.timer = null;
+                 this.sendCode().then((flag)=>{
+                     if(flag){
+                         if (!this.timer) {
+                             this.count = TIME_COUNT;
+                             this.show = false;
+                             this.timer = setInterval(() => {
+                                 if (this.count > 0 && this.count <= TIME_COUNT) {
+                                 this.count--;
+                             } else {
+                                 this.show = true;
+                                 clearInterval(this.timer);
+                                 this.timer = null;
+                             }
+                         }, 1000)
                          }
-                    }, 1000)
-                    }
+                     }
+
                  }).catch(err=>{
                      this.$message({
                      message:'错误提示'+err,
@@ -414,9 +424,24 @@ new Vue({
              }
          },
          sendCode(){
+             let self=this;
              return axios.get(dev_prefix+'/front/league/sms',{
                  params:{
                      phone:this.ruleForm.phone
+                 }
+             }).then((_data)=>{
+                 if(_data.data.code===200){
+                    self.$message({
+                         message:'短信发送成功，请注意查收',
+                         type:'success'
+                     })
+                    return true;
+                 }else{
+                     self.$message({
+                         message:_data.data.msg,
+                         type:'error'
+                     })
+                    return false;
                  }
              })
          },
